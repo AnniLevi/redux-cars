@@ -4,12 +4,14 @@ import CarList from "./components/CarList";
 import CarSearch from "./components/CarSearch";
 
 function App() {
-  return <div>
-    <CarForm />
-    <CarList />
-    <CarSearch />
-    <CarValue />
-  </div>;
+  return (
+    <div className="container is-fluid">
+      <CarForm />
+      <CarSearch />
+      <CarList />
+      <CarValue />
+    </div>
+  );
 }
 
 export default App;

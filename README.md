@@ -1,4 +1,4 @@
-## An application using React and Redux
+## An application with using React and Redux
 
 - user can add/delete cars in the car list
 - search functionality with a partial match across the entire list of cars is implemented

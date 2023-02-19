@@ -1,5 +1,22 @@
+import { useSelector } from "react-redux";
+
 function CarValue() {
-  return <div>CarValue</div>;
+  const totalCost = useSelector(({ cars: { data, searchTerm } }) => {
+    //{cars: {data, searchTerm}} - destructure the entire state object and get only cars piece of state
+    const filteredCars = data.filter((car) => {
+      return car.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    // let cost = 0;
+    // for (let car of filteredCars) {
+    //   cost += car.cost;
+    // }
+    // return cost;
+
+    // likewise
+    return filteredCars.reduce((accumulator, car) => accumulator + car.cost, 0);
+  });
+
+  return <div className="car-value">Total Cost: ${totalCost}</div>;
 }
 
 export default CarValue;
